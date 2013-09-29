@@ -5,6 +5,7 @@ window.onload = function() {
 	var sendButton = document.getElementById("send");
 	var content = document.getElementById("content");
 	var name = document.getElementById("name");
+	var switcher = document.getElementById("switcher");
 
 	socket.on('message', function(data) {
 		if(data.message) {
@@ -23,6 +24,7 @@ window.onload = function() {
 		}
 	});
 
+
 	sendButton.onclick = function() {
 		if(name.value == "") {
 			alert("Please type your name!");
@@ -34,5 +36,10 @@ window.onload = function() {
 			});
 			field.value = "";
 		}
-	}
+	};
+
+	switcher.onclick = function() {
+		console.log('running');
+		socket.emit('switchRoom', { room: 'room2' });
+	};
 }
