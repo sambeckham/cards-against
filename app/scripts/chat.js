@@ -1,4 +1,4 @@
-window.onload = function() {
+window.onclick = function() {
 	var messages = [];
 	var socket = io.connect('http://127.0.0.1:9000');
 	var field = document.getElementById("message");
