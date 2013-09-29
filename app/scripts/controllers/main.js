@@ -1,11 +1,18 @@
 'use strict';
 
 angular.module('cardsAgainstApp')
-  .controller('MainCtrl', function ($scope, socket) {
+  .controller('MainCtrl', function ($scope, $routeParams, socket) {
+    var room = $routeParams.roomId;
+    socket.room = room;
+    socket.emit('switchRoom', { room: room });
 
     $scope.messages = [];
     $scope.name = '';
     $scope.message = '';
+
+    socket.emit('send', { 
+        text: 'A new player has entered' 
+    });
 
     socket.on('message', function(data) {
         if(data.text) {

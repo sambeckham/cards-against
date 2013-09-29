@@ -26,6 +26,16 @@ angular.module('cardsAgainstApp')
             }
           });
         });
+      },
+      room: function(eventName, callback) {
+        socket.room(eventName, function() {
+          var args = arguments;
+          $rootScope.$apply(function() {
+            if (callback) {
+              callback.apply(socket, args);
+            }
+          });
+        });
       }
     };
   });
