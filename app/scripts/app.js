@@ -3,12 +3,15 @@
 angular.module('cardsAgainstApp', [])
   .config(function ($routeProvider, $locationProvider) {
     $routeProvider
-      .when('/g:roomId', {
+      .when('/', {
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })
+      .when('/g:roomId', {
+        templateUrl: 'views/chat.html'
+      })
       .otherwise({
-        redirectTo: '/g0000'
+        redirectTo: '/'
       });
 
       // I've disabled this until I can get the routing to play nice with express server
