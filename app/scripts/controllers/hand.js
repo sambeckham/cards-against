@@ -1,22 +1,9 @@
 'use strict';
 
 angular.module('cardsAgainstApp')
-  .controller('HandCtrl', function ($scope, socket) {
+  .controller('HandCtrl', function ($scope, socket, deck) {
     // TODO: Swap this for a service that retrieves the cards from the deck;
-    $scope.cards = [
-        {
-            id: 1,
-            message: 'message1'
-        },
-        {
-            id: 2,
-            message: 'message2'
-        },
-        {
-            id: 3,
-            message: 'message3'
-        }
-    ];
+    $scope.cards = deck.deal(3, 'white');
 
     $scope.name = prompt('What is your name?') || 'Guest';
 
