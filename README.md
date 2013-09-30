@@ -26,10 +26,12 @@ The app should now run on [port 9000](http://127.0.0.1:9000), you can change thi
 
 ToDo
 ---------
+
 - [x] Connect angular to socket.io on an express server.
 - [x] Build a simple chat service.
 - [x] Add functionality for multiple rooms.
 - [x] Randomly generate rooms on load
-- [ ] Each connected device becomes a player with their own scope/hand
-- [ ] Add in a few test cards using the chat app as a template
-- [ ] complete this list
+- [x] Each connected device becomes a player with their own scope/hand
+- [x] Add in a few test cards using the chat app as a template
+- [ ] Create a service that deals cards to the players via a JSON file
+- [ ] Add some basic styles so it doesn't look like a dev built it

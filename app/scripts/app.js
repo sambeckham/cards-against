@@ -8,7 +8,8 @@ angular.module('cardsAgainstApp', [])
         controller: 'MainCtrl'
       })
       .when('/g:roomId', {
-        templateUrl: 'views/chat.html'
+        templateUrl: 'views/hand.html',
+        controller: 'HandCtrl'
       })
       .otherwise({
         redirectTo: '/'

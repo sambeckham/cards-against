@@ -1,8 +1,3 @@
 <div class="chat" ng-controller="ChatCtrl">
-    <div id="content">
-        <span class="message" ng-repeat="message in messages" style="display: block;"><strong>{{ message.user }}:</strong> {{ message.text }}</span>
-    </div>
-    <input id='name' type='text' ng-model="name" placeholder="Username">
-    <input id='message' type='text' ng-model="message" placeholder="Message">
-    <input id='send' type='button' value='send' ng-click="sendMessage()">
+    <div class="message" ng-repeat="message in messages" style="display: block;"><strong>{{ message.user }}:</strong> {{ message.text }}</div>
 </div>

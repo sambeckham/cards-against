@@ -7,12 +7,6 @@ angular.module('cardsAgainstApp')
     socket.emit('switchRoom', { room: room });
 
     $scope.messages = [];
-    $scope.name = '';
-    $scope.message = '';
-
-    socket.emit('send', {
-        text: 'A new player has entered'
-    });
 
     socket.on('message', function(data) {
         if(data.text) {
