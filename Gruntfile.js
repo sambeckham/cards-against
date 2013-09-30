@@ -325,14 +325,8 @@ module.exports = function (grunt) {
       }
     }
   });
-  
-  grunt.loadNpmTasks('grunt-express');
 
-  grunt.registerTask('serve', [
-    'clean:server',
-    'express',
-    'express-keepalive'
-  ]);
+  grunt.loadNpmTasks('grunt-express');
 
   grunt.registerTask('server', function (target) {
     if (target === 'dist') {
