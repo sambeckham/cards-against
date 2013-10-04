@@ -41,6 +41,10 @@ module.exports = function (grunt) {
         files: ['<%= yeoman.app %>/styles/{,*/}*.css'],
         tasks: ['copy:styles', 'autoprefixer']
       },
+      compass: {
+        files: ['sass/{,*/}*.scss'],
+        tasks: ['compass:dev']
+      },
       livereload: {
         options: {
           livereload: LIVERELOAD_PORT
@@ -162,9 +166,9 @@ module.exports = function (grunt) {
       options: {
         port: '<%= connect.options.port %>',
         server: 'index.js',
-	bases: ['<%= yeoman.app  %>', '<%= yeoman.dist %>'],
-        livereload: true,
-	serverreload: true
+        bases: ['<%= yeoman.app  %>', '<%= yeoman.dist %>'],
+        // livereload: true,
+        // serverreload: true
       }
     },
     rev: {
@@ -323,10 +327,27 @@ module.exports = function (grunt) {
           ]
         }
       }
+    },
+    compass: {
+      dist: {
+        options: {
+          clean : true,
+          sassDir: 'sass',
+          cssDir: '<%= yeoman.app %>/css',
+          environment : 'production'
+        }
+      },
+      dev: {
+          options: {
+            sassDir: 'sass',
+            cssDir: '<%= yeoman.app %>/css'
+          }
+      }
     }
   });
 
   grunt.loadNpmTasks('grunt-express');
+  grunt.loadNpmTasks('grunt-contrib-compass');
 
   grunt.registerTask('server', function (target) {
     if (target === 'dist') {
@@ -336,8 +357,9 @@ module.exports = function (grunt) {
     grunt.task.run([
       'clean:server',
       'concurrent:server',
-      'autoprefixer',
-      'express'
+      'compass:dev',
+      'express',
+      'watch'
     ]);
   });
 
@@ -353,7 +375,7 @@ module.exports = function (grunt) {
     'clean:dist',
     'useminPrepare',
     'concurrent:dist',
-    'autoprefixer',
+    'compass:dist',
     'concat',
     'copy:dist',
     'cdnify',
