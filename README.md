@@ -15,11 +15,10 @@ Clone the repo, fire up terminal and enter the following commands.
 *Please note: You will need to have [node.js](http://nodejs.org/), [yeoman](http://yeoman.io/) and [git flow](https://github.com/nvie/gitflow) installed. Follow the links for help on getting these set up.
 
 ```shell
-$cd cards-against/
-$git flow init -d
-$npm install
-$bower update
-$grunt server
+git flow init -d
+npm install
+bower update
+grunt server
 ```
 
 The app should now run on [port 9000](http://127.0.0.1:9000), you can change this in Gruntfile.js if you wish.
