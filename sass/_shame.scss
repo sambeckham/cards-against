@@ -1,0 +1,4 @@
+body{
+    @extend .wrapper;
+    padding: $ratio-inv + em;
+}

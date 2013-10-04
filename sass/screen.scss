@@ -1,3 +1,12 @@
-html{
-    background: #ff0;
-}
+@import "compass";
+@import "compass/reset";
+
+@import "variables.scss";
+// @import "classes.scss";
+@import "typography.scss";
+// @import "icons.scss";
+@import "base.scss";
+
+// @import "cards.scss";
+
+@import "shame.scss";
