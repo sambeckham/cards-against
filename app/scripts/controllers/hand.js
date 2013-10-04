@@ -3,7 +3,7 @@
 angular.module('cardsAgainstApp')
   .controller('HandCtrl', function ($scope, socket, deck) {
     // TODO: Swap this for a service that retrieves the cards from the deck;
-    $scope.cards = deck.deal(3, 'white');
+    $scope.cards = deck.deal(10);
 
     $scope.name = prompt('What is your name?') || 'Guest';
 
