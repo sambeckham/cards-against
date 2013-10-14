@@ -1,6 +1,7 @@
 <div class="hand">
     <room></room>
     <input id='name' type='text' ng-model="name" placeholder="Username">
+    <button ng-click="deal(10)">Deal</button>
     <ul class="cards">
         <li ng-repeat="card in cards" ng-click="playCard(card)">
             {{ card.message }}

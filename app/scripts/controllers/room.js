@@ -1,8 +1,12 @@
 'use strict';
 
 angular.module('cardsAgainstApp')
-  .controller('RoomCtrl', function ($scope, $routeParams, socket) {
-    var room = $routeParams.roomId || $scope.roomId;
+  .controller('RoomCtrl', function ($rootScope, $scope, $routeParams, socket) {
+    var roomId = $routeParams.roomId || $scope.roomId;
+    
+    socket.emit('getRoomData', roomId, function (data) {
+      $rootScope.Room = data;
+    });
 
     $scope.messages = [];
 
@@ -13,6 +17,10 @@ angular.module('cardsAgainstApp')
         }else{
             console.log("There is a problem:", data);
         }
+    });
+
+    socket.on('update', function(data) {
+        $rootScope.Room = data;
     });
 
     $scope.sendMessage = function() {

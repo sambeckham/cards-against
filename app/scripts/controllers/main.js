@@ -3,7 +3,7 @@
 angular.module('cardsAgainstApp')
   .controller('MainCtrl', function ($scope, $location, $filter, socket) {
 
-	var temp = [{
+	var tempDeck = [{
         "id": 1,
         "inPlay" : false,
         "message": "Message 01"
@@ -20,22 +20,16 @@ angular.module('cardsAgainstApp')
     }];
 
     var Room = {
-    	// id : Math.random().toString(36).slice(10),
-    	id : "test_room",
+    	id : Math.random().toString(36).slice(10),
     	deck : {
-    		white : $filter('shuffle')(temp),
-    		black : $filter('shuffle')(temp)
+    		white : $filter('shuffle')(tempDeck),
+    		black : $filter('shuffle')(tempDeck)
     	}
     };
 
     socket.room = Room.id;
     socket.emit('switchRoom', { room: Room.id });
-
-		socket.emit('setRoomData', Room);
-
-	  socket.emit('getRoomData', 'This doesn;t seen neccasary', function (data) {
-	    console.log(data);
-	  });
+	socket.emit('setRoomData', Room);
 
     $scope.roomId = Room.id;
     $scope.ip = '127.0.0.1'; //The ip address of your machine/server

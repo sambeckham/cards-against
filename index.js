@@ -1,7 +1,8 @@
 var express = require('express'),
   app = express(),
   server = require('http').createServer(app),
-  io = require('socket.io').listen(server);
+  io = require('socket.io').listen(server),
+  rooms = {};
 
 app.get('/', function (req, res) {
   res.sendfile(__dirname + '/app/index.html');
@@ -24,19 +25,12 @@ io.sockets.on('connection', function (socket) {
   });
 
   socket.on('setRoomData', function (data) {
-    socket.set('roomData', data, function () {
-      console.log('Room data stored in room, ' + socket.room);
-    });
+    rooms[data.id] = data;
+    io.sockets.in(socket.room).emit('update', data);
   });
 
-  socket.on('getRoomData', function (isThisNeeded, fn) {
-    var roomData = {};
-    socket.get("roomData", function (err, data) {
-      console.log("getting room data...");
-      console.log(err);
-      roomData = data;
-    });
-    fn(roomData);
+  socket.on('getRoomData', function (id, fn) {
+    fn(rooms[id]);
   });
 });
 

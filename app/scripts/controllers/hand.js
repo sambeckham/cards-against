@@ -1,15 +1,9 @@
 'use strict';
 
 angular.module('cardsAgainstApp')
-  .controller('HandCtrl', function ($scope, $filter, socket) {
+  .controller('HandCtrl', function ($rootScope, $scope, $filter, socket) {
 
-    
-    socket.emit('getRoomData', 'This doesnt seen neccasary', function (data) {
-      console.log(data);
-    });
-
-    $scope.cards = "";
-
+    $scope.cards = [];
     // $scope.name = prompt('What is your name?') || 'Guest';
     $scope.name = 'Guest';
 
@@ -17,6 +11,19 @@ angular.module('cardsAgainstApp')
     socket.emit('send', {
         text: $scope.name + ' has entered the game'
     });
+
+    $scope.deal = function(amount, deckColor) {
+        var deckColor = deckColor || "white",
+            deck = $rootScope.Room.deck[deckColor],
+            count = 0;
+
+        while (0 < deck.length && amount > count) {
+            $scope.cards.push( deck.splice(0, 1)[0] );
+            count += 1;
+        }
+
+        socket.emit('setRoomData', $rootScope.Room);
+    }
 
     $scope.playCard = function(card) {
         socket.emit('send', {
