@@ -1,12 +1,15 @@
+/* Classes
+==========
+
+Extendable classes that can be seen only by SASS.
+It keeps the css cleaner if we decide not to use certain ones.
+
+*/
 %wrapper{
     position: relative;
     width: 100%;
     margin: 0 auto;
-    max-width: $xl;
-
-    @media (max-width: $xs) {
-        width: $xs;
-    }
+    max-width: $l;
 }
 
 %box{
@@ -25,6 +28,7 @@
     cursor: pointer;
     max-width: 100%;
     white-space: normal;
+    text-align: center;
     @include transition(background-color, .4s);
     @include border-radius(5px);
 
@@ -33,40 +37,27 @@
         background-color: $lime;
     }
 
-    &.centered{
-        text-align: center;
-    }
-
     &.full{
         width: 100%;
     }
 }
 
-/*
+/* Mixins
+==========
 
-    Flexbox Mixins
-    =================
-    A couple of mixins for using content creography with Flexbox
-    http://blog.woop.ie/post/23227066135/content-choreography-mixin
+Flexbox Mixins
+----------
+A couple of mixins for using content creography with Flexbox borrowed from
+[here](http://blog.woop.ie/post/23227066135/content-choreography-mixin)
 
-    Usage
-    ----------
-    .containing-block {
-        @include boxit(vertical);
-
-        .child-1 {
-            @include boxnum(2);
-        }
-        .child-2 {
-            @include boxnum(1);
-        }
-    }
+### flex-box()
+Adds `display: flex;` to the container with all the browser prefixes
 
 */
 
+
 @mixin flex-box() {
     .flexbox &{
-
         display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
         display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
         display: -ms-flexbox;      /* TWEENER - IE 10 */
@@ -84,6 +75,13 @@
     }
 }
 
+/*
+
+### flex-size($size)
+This determines the size of the box inside the flexbox model.
+
+*/
+
 @mixin flex-size($size) {
     .flexbox &{
         -webkit-box-flex: $size;
@@ -95,38 +93,52 @@
     }
 }
 
-@mixin flex-order($val) {
+/*
+
+### flex-order($position)
+This determines the position of the box inside the flexbox model.
+
+*/
+
+@mixin flex-order($position) {
     display: block;
     float: left;
 
     .flexbox &{
         float: none;
-        -webkit-box-ordinal-group: $val;
-        -moz-box-ordinal-group: $val;
-        -ms-flex-order: $val;
-        -webkit-order: $val;
-        order: $val;
+        -webkit-box-ordinal-group: $position;
+        -moz-box-ordinal-group: $position;
+        -ms-flex-order: $position;
+        -webkit-order: $position;
+        order: $position;
     }
 }
 
-/*
+/* ---
 
-    Animation Mixins
-    =================
-    One for setting the animations and one for getting them.
+Animation Mixins
+----------
+One for setting the animations and one for getting them.
+Basically a prefix free way of animating with CSS3.
 
-    Usage
-    ----------
-    Not sure yet, working on it.
+### keyframes($name)
+This defines the animation. Pass in the name then withe the animation betweeen the curly braces as normal.
+
+`@include keyframes(fade) {
+    0%{
+        opacity: 1;
+    },
+    100%{
+        opacity: 0;
+    }
+}`
+
+### animation($params)
+Set this on the element you wish to animate.
+
+`@include animation(fade 1s linear);`
 
 */
-
-@mixin animation($params) {
-    -webkit-animation:$params;
-    -moz-animation:$params;
-    -ms-animation:$params;
-    animation:$params;
-}
 
 @mixin keyframes($name) {
     @-webkit-keyframes $name { @content }
@@ -135,17 +147,19 @@
     @keyframes         $name { @content }
 }
 
-/*
 
-    Filter Mixin
-    =================
-    Pretty much just a prefix-free type deal.
+@mixin animation($params) {
+    -webkit-animation:$params;
+    -moz-animation:$params;
+    -ms-animation:$params;
+    animation:$params;
+}
 
-    Usage
-    ----------
-    .iOS7{
-        @include filter(blur, 10px);
-    }
+/* ---
+
+Filter Mixin
+----------
+Again, pretty much a vendor prefixer.
 
 */
 

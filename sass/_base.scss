@@ -1,3 +1,9 @@
+/* Page setup
+==========
+
+Basic styles to set up the page backgrounds, grid systems, etc.
+
+*/
 *{
     @include box-sizing(border-box);
 }
@@ -14,6 +20,25 @@ img{
     height: auto;
 }
 
+.wrapper{
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    max-width: $l;
+}
+
+/* Basic Elements
+==========
+
+All the basic elements.
+
+    <strong>strong</strong><br />
+    <em>em</em><br />
+    <small>small</small><br />
+    <a href="#">link</a><br />
+
+*/
+
 b,
 strong{
     font-weight: bold;
@@ -22,7 +47,7 @@ strong{
 i,
 em{
     font-style: italic;
-    color: $concrete;
+    color: $grey;
 }
 
 small{
@@ -30,17 +55,12 @@ small{
 }
 
 a{
-    color: inherit;
+    color: $orange;
+    text-decoration: none;
 
     &:hover,
     &:focus{
-        @include text-shadow(1px 1px 1px rgba(0,0,0,0.2));
+        color: $light-orange;
+        text-decoration: underline;
     }
-}
-
-.wrapper{
-    max-width: 100%;
-    width: 740px; //TODO Unify this shit, It's an arbitrary value right now.
-    margin: 0 auto;
-    position: relative;
 }

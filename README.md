@@ -9,12 +9,16 @@ Disclaimer
 ----------
 I am in no way affiliated with the official Cards Against Humanity card game but they are top blokes and distribute the game under a Creative Commons BY-NC-SA 2.0 license so it's all kosher. If you like the game I strongly suggest heading over to [their website](http://cardsagainsthumanity.com) and buying a deck yourself.
 
+Documentation
+----------
+Check out the documentation in the docs folder for info on how to use the styles correctly. Any additions or changes to the SASS files need to be fully documented in the same style.
+
 Setting it up
 ----------
 Clone the repo, fire up terminal and enter the following commands.
 *Please note: You will need to have [node.js](http://nodejs.org/), [yeoman](http://yeoman.io/) and [git flow](https://github.com/nvie/gitflow) installed. Follow the links for help on getting these set up.
 
-```shell
+```
 git flow init -d
 npm install
 bower update
@@ -26,11 +30,4 @@ The app should now run on [port 9000](http://127.0.0.1:9000), you can change thi
 ToDo
 ---------
 
-- [x] Connect angular to socket.io on an express server.
-- [x] Build a simple chat service.
-- [x] Add functionality for multiple rooms.
-- [x] Randomly generate rooms on load
-- [x] Each connected device becomes a player with their own scope/hand
-- [x] Add in a few test cards using the chat app as a template
 - [ ] Create a service that deals cards to the players via a JSON file
-- [ ] Add some basic styles so it doesn't look like a dev built it

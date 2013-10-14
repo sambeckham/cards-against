@@ -338,16 +338,24 @@ module.exports = function (grunt) {
         }
       },
       dev: {
-          options: {
-            sassDir: 'sass',
-            cssDir: '<%= yeoman.app %>/css'
-          }
+        options: {
+          sassDir: 'sass',
+          cssDir: '<%= yeoman.app %>/css'
+        }
+      }
+    },
+    styleguide: {
+      dist: {
+        files: {
+            'docs/core': 'sass/*.scss'
+        }
       }
     }
   });
 
   grunt.loadNpmTasks('grunt-express');
   grunt.loadNpmTasks('grunt-contrib-compass');
+  grunt.loadNpmTasks('grunt-styleguide');
 
   grunt.registerTask('server', function (target) {
     if (target === 'dist') {
@@ -364,15 +372,16 @@ module.exports = function (grunt) {
   });
 
   grunt.registerTask('test', [
+    'jshint',
     'clean:server',
     'concurrent:test',
-    'autoprefixer',
     'connect:test',
     'karma'
   ]);
 
   grunt.registerTask('build', [
     'clean:dist',
+    'styleguide:dist',
     'useminPrepare',
     'concurrent:dist',
     'compass:dist',
@@ -387,7 +396,6 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('default', [
-    'jshint',
     'test',
     'build'
   ]);

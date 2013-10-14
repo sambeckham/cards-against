@@ -63,7 +63,70 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   display: block;
 }
 
-/* line 58, ../../sass/_typography.scss */
+/* Ratios
+==========
+
+Some universal values based on the [golden ratio](http://en.wikipedia.org/wiki/Golden_ratio) and it's inverse
+
+*/
+/* Colors
+==========
+
+A collection of variables to store the colors.
+
+*/
+/* Breakpoints
+==========
+
+The global breakpoints for the site.
+
+*/
+/* Typography
+==========
+
+A really nice typographic system based on concepts taken from
+[typeplate](http://typeplate.com) and
+[typecast](http://typecast.com/blog/contrast-through-scale).
+
+*/
+/* Mixins
+==========
+
+These mixins are used by the sass file to generate the font sizes
+and calculate the line-heights
+
+Context Calculator
+----------
+
+Divide a given font-size by base font-size & return a relative value
+
+*/
+/* Measure Margin
+----------
+
+Divide 1 unit of measure by given font-size & return a relative em value
+
+*/
+/* Type-Scale
+----------
+
+Provides a pixel fallback if you decide to use 'rems' as a unit over ems.
+
+*/
+/* Headings
+==========
+
+Basic heading sizes in the style of [@csswizardry](http://csswizardry.com).
+
+    <h1>Heading 1</h1>
+    <h2>Heading 2</h2>
+    <h3>Heading 3</h3>
+    <h4>Heading 4</h4>
+    <h5>Heading 5</h5>
+    <h6>Heading 6</h6>
+
+*/
+/* line 87, ../../sass/_typography.scss */
 h1, h2, h3, h4, h5, h6 {
   text-rendering: optimizeLegibility;
   line-height: 1;
@@ -71,69 +134,83 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
 }
 
-/* line 74, ../../sass/_typography.scss */
+/* line 97, ../../sass/_typography.scss */
 .tera {
   font-size: 117px;
   font-size: 6.5rem;
   margin-bottom: 0.24893rem;
 }
 
-/* line 74, ../../sass/_typography.scss */
+/* line 97, ../../sass/_typography.scss */
 .giga {
   font-size: 90px;
   font-size: 5rem;
   margin-bottom: 0.32361rem;
 }
 
-/* line 74, ../../sass/_typography.scss */
+/* line 97, ../../sass/_typography.scss */
 .mega {
   font-size: 72px;
   font-size: 4rem;
   margin-bottom: 0.40451rem;
 }
 
-/* line 74, ../../sass/_typography.scss */
+/* line 97, ../../sass/_typography.scss */
 .alpha, h1 {
   font-size: 60px;
   font-size: 3.33333rem;
   margin-bottom: 0.48541rem;
 }
 
-/* line 74, ../../sass/_typography.scss */
+/* line 97, ../../sass/_typography.scss */
 .beta, h2 {
   font-size: 48px;
   font-size: 2.66667rem;
   margin-bottom: 0.60676rem;
 }
 
-/* line 74, ../../sass/_typography.scss */
+/* line 97, ../../sass/_typography.scss */
 .gamma, h3 {
   font-size: 36px;
   font-size: 2rem;
   margin-bottom: 0.80902rem;
 }
 
-/* line 74, ../../sass/_typography.scss */
+/* line 97, ../../sass/_typography.scss */
 .delta, h4 {
   font-size: 24px;
   font-size: 1.33333rem;
   margin-bottom: 1.21353rem;
 }
 
-/* line 74, ../../sass/_typography.scss */
+/* line 97, ../../sass/_typography.scss */
 .epsilon, h5 {
   font-size: 21px;
   font-size: 1.16667rem;
   margin-bottom: 1.38689rem;
 }
 
-/* line 74, ../../sass/_typography.scss */
+/* line 97, ../../sass/_typography.scss */
 .zeta, h6 {
   font-size: 18px;
   font-size: 1rem;
   margin-bottom: 1.61803rem;
 }
 
+/* Ampersand
+==========
+
+Some fancy pants CSS to make ampersands look
+[totes amazeballs](http://www.artrocker.tv/images/uploads/Totes_Amazeballs.jpg).
+You can either call it in the HTML by adding a class of `.ampersand` ir you can
+extend it in SASS.
+
+    <h1 class="ampersand">Frank & beans</h1>
+    <p class="ampersand">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ac est tristique & turpis tincidunt dictum nec eu elit. Sed eget varius mi, aliquet <a href="#">rutrum & nibh.</a>
+    </p>
+
+*/
 @font-face {
   font-family: "Ampersand";
   src: local("Georgia"), local("Garamond"), local("Palatino"), local("Book Antiqua");
@@ -146,14 +223,25 @@ h1, h2, h3, h4, h5, h6 {
   unicode-range: U+270C;
 }
 
-/* line 1, ../../sass/_base.scss */
+/* line 167, ../../sass/_typography.scss */
+.ampersand {
+  font-family: Ampersand, Verdana, sans-serif;
+}
+
+/* Page setup
+==========
+
+Basic styles to set up the page backgrounds, grid systems, etc.
+
+*/
+/* line 7, ../../sass/_base.scss */
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-/* line 5, ../../sass/_base.scss */
+/* line 11, ../../sass/_base.scss */
 html {
   font: normal 112.5%/1.61803 "helvetica neue", helvetica, sans-serif;
   word-wrap: break-word;
@@ -161,48 +249,67 @@ html {
   color: black;
 }
 
-/* line 12, ../../sass/_base.scss */
+/* line 18, ../../sass/_base.scss */
 img {
   max-width: 100%;
   height: auto;
 }
 
-/* line 18, ../../sass/_base.scss */
+/* line 23, ../../sass/_base.scss */
+.wrapper, body {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  max-width: 740px;
+}
+
+/* Basic Elements
+==========
+
+All the basic elements.
+
+    <strong>strong</strong><br />
+    <em>em</em><br />
+    <small>small</small><br />
+    <a href="#">link</a><br />
+
+*/
+/* line 43, ../../sass/_base.scss */
 b,
 strong {
   font-weight: bold;
 }
 
-/* line 23, ../../sass/_base.scss */
+/* line 48, ../../sass/_base.scss */
 i,
 em {
   font-style: italic;
   color: #95a5a6;
 }
 
-/* line 28, ../../sass/_base.scss */
+/* line 53, ../../sass/_base.scss */
 small {
   font-size: 0.61803em;
 }
 
-/* line 32, ../../sass/_base.scss */
+/* line 57, ../../sass/_base.scss */
 a {
-  color: inherit;
+  color: #f39c12;
+  text-decoration: none;
 }
-/* line 36, ../../sass/_base.scss */
+/* line 62, ../../sass/_base.scss */
 a:hover, a:focus {
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+  color: #f5b043;
+  text-decoration: underline;
 }
 
-/* line 41, ../../sass/_base.scss */
-.wrapper, body {
-  max-width: 100%;
-  width: 740px;
-  margin: 0 auto;
-  position: relative;
-}
+/* Shame
+==========
 
-/* line 1, ../../sass/_shame.scss */
+Hacky, shameful CSS that needs fixing. Based on an idea from [@csswizardry](http://csswizardry.com)
+
+*/
+/* line 7, ../../sass/_shame.scss */
 body {
   padding: 0.61803em;
 }

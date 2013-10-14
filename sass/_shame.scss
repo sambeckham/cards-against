@@ -1,3 +1,9 @@
+/* Shame
+==========
+
+Hacky, shameful CSS that needs fixing. Based on an idea from [@csswizardry](http://csswizardry.com)
+
+*/
 body{
     @extend .wrapper;
     padding: $ratio-inv + em;

@@ -1,36 +1,31 @@
-// Ratios
+/* Ratios
+==========
+
+Some universal values based on the [golden ratio](http://en.wikipedia.org/wiki/Golden_ratio) and it's inverse
+
+*/
 $ratio      : 1.618033988750894;
 $ratio-inv  : 1 / $ratio;
 
-// Colors (From http://flatuicolors.com/)
-$turquoise      : #1abc9c;
-$green-sea      : #16a085;
-$sun-flower     : #f1c40f;
-$orange         : #f39c12;
-$emerald        : #2ecc71;
-$nephritis      : #27ae60;
-$carrot         : #e67e22;
-$pumpkin        : #d35400;
-$peter-river    : #3498db;
-$belize-hole    : #2980b9;
-$alizarin       : #e74c3c;
-$pomegranate    : #c0392b;
-$amethyst       : #9b59b6;
-$wisteria       : #8e44ad;
-$clouds         : #ecf0f1;
-$silver         : #bdc3c7;
-$wet-asphalt    : #34495e;
-$midnight-blue  : #2c3e50;
-$concrete       : #95a5a6;
-$asbestos       : #7f8c8d;
-$mud            : #dc8543;
-$chocolate      : #b06a36;
+/* Colors
+==========
 
+A collection of variables to store the colors.
+
+*/
 $white  : #fff;
-$grey   : $concrete;
+$grey   : #95a5a6;
 $black  : #000;
 
-// Breakpoints
-$S  : 480px;
-$M  : 580px;
-$L  : 740px;
+$orange : #f39c12;
+$light-orange : lighten($orange, 10%);
+
+/* Breakpoints
+==========
+
+The global breakpoints for the site.
+
+*/
+$s  : 480px;
+$m  : 580px;
+$l  : 740px;
