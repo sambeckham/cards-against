@@ -1,9 +1,9 @@
 'use strict';
 
 angular.module('cardsAgainstApp')
-  .directive('chat', function () {
+  .directive('room', function () {
     return {
-      templateUrl: '/views/chat.html',
+      templateUrl: '/views/room.html',
       restrict: 'E'
     };
   });

@@ -1,13 +1,10 @@
 'use strict';
 
 angular.module('cardsAgainstApp')
-  .controller('ChatCtrl', function ($scope, $routeParams, socket, deck) {
+  .controller('RoomCtrl', function ($scope, $routeParams, socket) {
     var room = $routeParams.roomId || $scope.roomId;
-    socket.room = room;
-    socket.emit('switchRoom', { room: room });
 
     $scope.messages = [];
-    $scope.whiteDeck = deck.get('white');
 
     socket.on('message', function(data) {
         if(data.text) {

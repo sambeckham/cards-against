@@ -1,8 +1,7 @@
 <div class="hand">
-    <chat></chat>
+    <room></room>
     <input id='name' type='text' ng-model="name" placeholder="Username">
     <ul class="cards">
-        {{ cards }}
         <li ng-repeat="card in cards" ng-click="playCard(card)">
             {{ card.message }}
         </li>

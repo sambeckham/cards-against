@@ -10,15 +10,33 @@ app.get('/', function (req, res) {
 app.use(express.static(__dirname + '/app'));
 
 io.sockets.on('connection', function (socket) {
+
   socket.on('send', function(data) {
     io.sockets.in(socket.room).emit('message', data);
   });
+
   socket.on('switchRoom', function(data) {
     var newRoom = data.room;
     console.log('switching to ' + newRoom);
         socket.leave(socket.room);
         socket.join(newRoom);
         socket.room = newRoom;
+  });
+
+  socket.on('setRoomData', function (data) {
+    socket.set('roomData', data, function () {
+      console.log('Room data stored in room, ' + socket.room);
+    });
+  });
+
+  socket.on('getRoomData', function (isThisNeeded, fn) {
+    var roomData = {};
+    socket.get("roomData", function (err, data) {
+      console.log("getting room data...");
+      console.log(err);
+      roomData = data;
+    });
+    fn(roomData);
   });
 });
 

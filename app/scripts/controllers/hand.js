@@ -1,11 +1,17 @@
 'use strict';
 
 angular.module('cardsAgainstApp')
-  .controller('HandCtrl', function ($scope, socket, deck) {
-    // TODO: Swap this for a service that retrieves the cards from the deck;
-    $scope.cards = deck.deal(10);
+  .controller('HandCtrl', function ($scope, $filter, socket) {
 
-    $scope.name = prompt('What is your name?') || 'Guest';
+    
+    socket.emit('getRoomData', 'This doesnt seen neccasary', function (data) {
+      console.log(data);
+    });
+
+    $scope.cards = "";
+
+    // $scope.name = prompt('What is your name?') || 'Guest';
+    $scope.name = 'Guest';
 
     //TODO For some reason this broadcasts to all rooms, look into this
     socket.emit('send', {

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('cardsAgainstApp', ['ngResource'])
+angular.module('cardsAgainstApp', [])
   .config(function ($routeProvider, $locationProvider) {
     $routeProvider
       .when('/', {
