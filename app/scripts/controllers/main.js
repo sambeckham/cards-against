@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('cardsAgainstApp')
-  .controller('MainCtrl', function ($scope, $location, $filter, socket) {
+  .controller('MainCtrl', function ($scope, $location, $filter, socket, deck) {
 
 	var tempDeck = [{
         "id": 1,
@@ -18,12 +18,14 @@ angular.module('cardsAgainstApp')
         "inPlay" : false,
         "message": "Message 03"
     }];
+    var whiteDeck = deck.get('white');
+    var blackDeck = deck.get('black');
 
     var Room = {
     	id : Math.random().toString(36).slice(10),
     	deck : {
-    		white : $filter('shuffle')(tempDeck),
-    		black : $filter('shuffle')(tempDeck)
+    		white : $filter('shuffle')(whiteDeck),
+    		black : $filter('shuffle')(blackDeck)
     	}
     };
 
