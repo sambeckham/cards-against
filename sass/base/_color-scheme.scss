@@ -1,0 +1,28 @@
+/* Colors
+==========
+
+A collection of variables to store the colors.
+
+*/
+$color_white  : #fff;
+$color_grey   : #ddd;
+$color_black  : #000;
+
+// Red
+$color_alt : #dd0017;
+
+// Orange
+// $color_alt : #f77f00;
+
+// Yellow
+// $color_alt : #ffcc33;
+
+// Green
+// $color_alt : #00af81;
+
+// Blue
+// $color_alt : #0e76a8;
+
+$color_alt_light : mix($color_white, $color_alt, 20%);
+$color_alt_dark : mix($color_black, $color_alt, 20%);
+$color_alt_trans : rgba($color_alt, 1 - $ratio-inv);

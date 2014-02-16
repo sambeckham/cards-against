@@ -7,19 +7,6 @@ Some universal values based on the [golden ratio](http://en.wikipedia.org/wiki/G
 $ratio      : 1.618033988750894;
 $ratio-inv  : 1 / $ratio;
 
-/* Colors
-==========
-
-A collection of variables to store the colors.
-
-*/
-$white  : #fff;
-$grey   : #95a5a6;
-$black  : #000;
-
-$orange : #f39c12;
-$light-orange : lighten($orange, 10%);
-
 /* Breakpoints
 ==========
 

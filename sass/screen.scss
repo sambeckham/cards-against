@@ -1,12 +1,21 @@
 @import "compass";
 @import "compass/reset";
 
-@import "variables.scss";
-// @import "classes.scss";
-@import "typography.scss";
-// @import "icons.scss";
-@import "base.scss";
+@import "base/variables.scss";
+@import "base/color-scheme.scss";
+@import "base/typography.scss";
+@import "base/icons.scss";
 
-// @import "cards.scss";
+@import "global/layout.scss";
+@import "global/main.scss";
+
+// @import "elements/forms.scss";
+@import "elements/links.scss";
+// @import "elements/lists.scss";
+@import "elements/media.scss";
+// @import "elements/tables.scss";
+@import "elements/text.scss";
+
+@import "patterns/buttons.scss";
 
 @import "shame.scss";

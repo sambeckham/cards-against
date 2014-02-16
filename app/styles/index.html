@@ -1,0 +1,194 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <meta name=”mobile-web-app-capable” content=”yes”>
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+        <!-- build:css(.tmp) styles/main.css -->
+        <link rel="stylesheet" href="/css/screen.css">
+        <!-- endbuild -->
+</head>
+  <body>
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <!--[if lt IE 9]>
+      <script src="bower_components/es5-shim/es5-shim.js"></script>
+      <script src="bower_components/json3/lib/json3.min.js"></script>
+    <![endif]-->
+
+    <header class="navigation scrolling">
+      <h1>Cards Against</h1>
+    </header>
+
+    <div class="main">
+      <section class="screen">
+        <header>
+          <h2>Style guide</h2>
+        </header>
+
+        <blockquote>It's dangerous to go alone&hellip;</blockquote>
+        <p>This Style &amp; Pattern library is a collection of <a href="http://bradfrostweb.com/blog/post/atomic-web-design/">Atomic elements</a> that come together to build Cards Against.</p>
+        <p>Using this technique we can build ideas quickly and easily, keeping everything all uniform and lovely.</p>
+        <p>This library is here to help you, it's a bit like the Twitter bootstrap &mdash; but it's only for this site so it's not as big.</p>
+        <p>Whether you're working on a new feature, modifying an existing one or whatever it is you're doing &mdash; use this library. If we start deviating from this library we start getting inconsistencies in our app and we make it harder to update further down the line.</p>
+        <p>If you want to add a new feature and the patterns/styles don't exist in this library, check again. If you're still 100% sure they don't exist then create a new pattern/style and add it in to the library. <strong>Do <em>NOT</em> just write it into the app</strong> &mdash; It's lazy.</p>
+      </section>
+
+      <section class="screen" id="grid">
+        <header>
+          <h2>Grid</h2>
+        </header>
+
+        <p>We use a 12-column grid, similar to the old 960 grid system only 100% responsive. Border-box is also applied with a padding of <code>0.61803em</code></p>
+
+        <h3>Grid sizes</h3> 
+        <div class="row">
+          <div class="example column_1-of-1 last column center">
+            <div class="row">
+              <div class="column_1-of-1 last column"><span class="column_fill">1/1</span></div>
+            </div>
+            <div class="row">
+              <div class="column_1-of-2 column"><span class="column_fill">1/2</span></div>
+              <div class="column_1-of-2 last column"><span class="column_fill">1/2</span></div>
+            </div>
+            <div class="row">
+              <div class="column_1-of-3 column"><span class="column_fill">1/3</span></div>
+              <div class="column_1-of-3 column"><span class="column_fill">1/3</span></div>
+              <div class="column_1-of-3 last column"><span class="column_fill">1/3</span></div>
+            </div>
+            <div class="row">
+              <div class="column_1-of-4 column"><span class="column_fill">1/4</span></div>
+              <div class="column_1-of-4 column"><span class="column_fill">1/4</span></div>
+              <div class="column_1-of-4 column"><span class="column_fill">1/4</span></div>
+              <div class="column_1-of-4 last column"><span class="column_fill">1/4</span></div>
+            </div>
+            <div class="row">
+              <div class="column_1-of-5 column"><span class="column_fill">1/5</span></div>
+              <div class="column_1-of-5 column"><span class="column_fill">1/5</span></div>
+              <div class="column_1-of-5 column"><span class="column_fill">1/5</span></div>
+              <div class="column_1-of-5 column"><span class="column_fill">1/5</span></div>
+              <div class="column_1-of-5 last column"><span class="column_fill">1/5</span></div>
+            </div>
+          </div>
+        </div>
+
+        <h3>Mixed columns</h3>
+        <p>You can mix-and match the grid elements as well. Just make sure it adds up to 100%</p>
+        <div class="row">
+          <div class="example column_1-of-1 last column center">
+            <div class="row">
+              <div class="column_2-of-3 column"><span class="column_fill">2/3</span></div>
+              <div class="column_1-of-3 last column"><span class="column_fill">1/3</span></div>
+            </div>
+            <div class="row">
+              <div class="column_1-of-4 column"><span class="column_fill">1/4</span></div>
+              <div class="column_3-of-4 last column"><span class="column_fill">3/4</span></div>
+            </div>
+            <div class="row">
+              <div class="column_1-of-5 column"><span class="column_fill">1/5</span></div>
+              <div class="column_3-of-5 column"><span class="column_fill">3/5</span></div>
+              <div class="column_1-of-5 last column"><span class="column_fill">1/5</span></div>
+            </div>
+            <div class="row">
+              <div class="column_2-of-5 column"><span class="column_fill">2/5</span></div>
+              <div class="column_1-of-5 column"><span class="column_fill">1/5</span></div>
+              <div class="column_2-of-5 last column"><span class="column_fill">2/5</span></div>
+            </div>
+          </div>
+        </div>
+
+        <h3>Nested grids</h3>
+        <p>You can also nest grids, but be careful. This can go very wrong, very quickly. If you want to group them just add a class of <code>.group</code> and it will remove the extra padding.</p>
+        <p>Stick to a maximum of three nested elements &ndash; <strong>DON'T</strong> go any further than this.</p>
+        <div class="row">
+          <div class="example column_1-of-1 last column center">
+            <div class="row">
+              <div class="column_1-of-3 column"><span class="column_fill">1/3</span></div>
+              <div class="column_2-of-3 last column">
+                <div class="row">
+                  <div class="column_1-of-4 column"><span class="column_fill">1/4</span></div>
+                  <div class="column_3-of-4 last column"><span class="column_fill">3/4</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="column_2-of-3 column group">
+                <div class="row">
+                  <div class="column_1-of-2 column"><span class="column_fill">1/2</span></div>
+                  <div class="column_1-of-2 last column"><span class="column_fill">1/2</span></div>
+                </div>
+              </div>
+              <div class="column_1-of-3 last column"><span class="column_fill">1/3</span></div>
+            </div>
+            <div class="row">
+              <div class="column_1-of-2 column"><span class="column_fill">1/2</span></div>
+              <div class="column_1-of-2 last column group">
+                <div class="row">
+                  <div class="column_1-of-2 column"><span class="column_fill">1/2</span></div>
+                  <div class="column_1-of-2 last column group">
+                    <div class="row">
+                      <div class="column_1-of-2 column"><span class="column_fill">1/2</span></div>
+                      <div class="column_1-of-2 last column"><span class="column_fill">1/2</span></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </section>
+    <!-- END Grid -->
+    </div>
+
+    <!-- START Typography -->
+      <section class="screen" id="typography">
+        <header>
+          <h2>Typography</h2>
+        </header>
+        <p>The typography on SuperCleverStuff follows the <a href="http://typeplate.com">typeplate</a> stucture with a 0.16803em baseline. It's limited to a 38em line-width by default which keeps it under the  suggested 72 character line-length, makes the text easier to read.</p>
+
+          <div class="row">
+            <div class="column example last column_1-of-1">
+              <article>
+                <h1>Random Babble</h1>
+                <p>A snappy introduction that sets out the main argument for the piece. I'll cover the main ideas right here and hint at my conclusion without giving the game away completely.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis laboriosam qui ad dicta accusamus incidunt illo nostrum eveniet quisquam assumenda! Molestiae, sapiente possimus fuga voluptates nobis cupiditate at amet veritatis minus ipsam? Nam, quaerat, ut. Nisi, in facere animi minus suscipit ab earum. Tempore, aut accusamus blanditiis quam? Modi, atque, enim, numquam eligendi fugit magnam aliquid debitis ad consequatur quia recusandae explicabo accusantium delectus aliquam reiciendis fuga voluptatibus officiis odio qui ab similique. At, perspiciatis, doloribus totam beatae quod accusantium dignissimos nemo esse debitis obcaecati modi et quos voluptatibus placeat odit? Doloremque nemo vero ea quo at explicabo sed vel.</p>
+                <h2>Sub-heading</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis, dolores, eos delectus expedita ea earum recusandae odio culpa voluptate pariatur aliquid voluptates doloremque tenetur. Perferendis, maxime quos nulla ipsam exercitationem veniam magni quis saepe. Aperiam, reiciendis, repellendus, ipsum, molestiae hic cupiditate ratione doloremque expedita totam ad sapiente nisi dolorem quam.</p>
+                <p class="readability-test">Lorem ipsum dolor sit amet, consectetur adip*isicing elit, sed do eiusmod *tempor incididunt ut labore et dolore magna aliqua.</p>
+                <h3>Sub-sub heading</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore, ex, iste, repudiandae unde nihil id veritatis architecto nemo illum nostrum optio pariatur dignissimos placeat. Illum reiciendis delectus quasi voluptas itaque nobis tempora cupiditate?</p>
+                <p><a href="#">Link</a></p>
+                <p><a href="/styles" visited>Visited link</a></p>
+              </article>
+            </div>
+          </div>
+      </section>
+    <!-- END Typography -->
+
+    <!-- START Buttons -->
+    <section class="screen" id="buttons">
+      <header>
+        <h2>Buttons</h2>
+      </header>
+      <p>Just add a class of <code>.button</code> to a link, or use the <code>&lt;button&gt;</code> element.</p>
+      <a class="button">Standard</a>
+      <a class="button_black">Black</a>
+      <a class="button_white">White</a>
+      <a class="button disabled" disabled>Disabled</a>
+      <p>Buttons will shrink to match their container but will be no-wider than 480px. If you wish to change this, add a class of <code>.button_full</code> to the button.</p>
+      <a class="button button_full">Full-width button with a boat-load of text.</a>
+    </section>
+    <!-- END Butons -->
+
+  </body>
+</html>

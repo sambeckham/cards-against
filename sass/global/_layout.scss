@@ -1,0 +1,57 @@
+*{
+    @include box-sizing(border-box);
+}
+
+// Grid
+// ----------
+.row{
+    @include clearfix();
+}
+
+.column{
+    float: left;
+    padding: $ratio-inv#{em};
+
+    &.last{
+        float: right;
+    }
+
+    &.group{
+        padding: 0;
+    }
+}
+
+$list-widths : (1, 2, 3, 4, 5);
+
+@each $width in $list-widths{
+    @for $columns from 1 through $width{
+        .column_#{$columns}-of-#{$width}{
+            width: percentage($columns/$width);
+
+            @media(max-width: $s){
+                width: percentage(1/1);
+            }
+        }
+    }
+}
+
+.screen{
+    min-height: 100%;
+    min-height: 100vh;
+    padding: pow($ratio, 3)#{em} $ratio#{em} $ratio#{em};
+
+    &:nth-child(2n + 1){
+        background-color: $color_black;
+        color: $color_white;
+        fill: $color_white;
+
+        .example{
+            border-color: $color_white;
+        }
+    }
+}
+
+.example{
+    margin-bottom: $ratio#{em};
+    border: 1px solid $color_black;
+}

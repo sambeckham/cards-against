@@ -69,16 +69,16 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 Some universal values based on the [golden ratio](http://en.wikipedia.org/wiki/Golden_ratio) and it's inverse
 
 */
-/* Colors
-==========
-
-A collection of variables to store the colors.
-
-*/
 /* Breakpoints
 ==========
 
 The global breakpoints for the site.
+
+*/
+/* Colors
+==========
+
+A collection of variables to store the colors.
 
 */
 /* Typography
@@ -126,7 +126,7 @@ Basic heading sizes in the style of [@csswizardry](http://csswizardry.com).
     <h6>Heading 6</h6>
 
 */
-/* line 87, ../../sass/_typography.scss */
+/* line 87, ../../sass/base/_typography.scss */
 h1, h2, h3, h4, h5, h6 {
   text-rendering: optimizeLegibility;
   line-height: 1;
@@ -134,67 +134,58 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
 }
 
-/* line 97, ../../sass/_typography.scss */
+/* line 97, ../../sass/base/_typography.scss */
 .tera {
-  font-size: 117px;
-  font-size: 6.5rem;
-  margin-bottom: 0.24893rem;
+  font-size: 6.5em;
+  margin-bottom: 0.24893em;
 }
 
-/* line 97, ../../sass/_typography.scss */
+/* line 97, ../../sass/base/_typography.scss */
 .giga {
-  font-size: 90px;
-  font-size: 5rem;
-  margin-bottom: 0.32361rem;
+  font-size: 5em;
+  margin-bottom: 0.32361em;
 }
 
-/* line 97, ../../sass/_typography.scss */
+/* line 97, ../../sass/base/_typography.scss */
 .mega {
-  font-size: 72px;
-  font-size: 4rem;
-  margin-bottom: 0.40451rem;
+  font-size: 4em;
+  margin-bottom: 0.40451em;
 }
 
-/* line 97, ../../sass/_typography.scss */
+/* line 97, ../../sass/base/_typography.scss */
 .alpha, h1 {
-  font-size: 60px;
-  font-size: 3.33333rem;
-  margin-bottom: 0.48541rem;
+  font-size: 3.33333em;
+  margin-bottom: 0.48541em;
 }
 
-/* line 97, ../../sass/_typography.scss */
+/* line 97, ../../sass/base/_typography.scss */
 .beta, h2 {
-  font-size: 48px;
-  font-size: 2.66667rem;
-  margin-bottom: 0.60676rem;
+  font-size: 2.66667em;
+  margin-bottom: 0.60676em;
 }
 
-/* line 97, ../../sass/_typography.scss */
+/* line 97, ../../sass/base/_typography.scss */
 .gamma, h3 {
-  font-size: 36px;
-  font-size: 2rem;
-  margin-bottom: 0.80902rem;
+  font-size: 2em;
+  margin-bottom: 0.80902em;
 }
 
-/* line 97, ../../sass/_typography.scss */
-.delta, h4 {
-  font-size: 24px;
-  font-size: 1.33333rem;
-  margin-bottom: 1.21353rem;
+/* line 97, ../../sass/base/_typography.scss */
+.delta, h4, blockquote, h1 + p {
+  font-size: 1.33333em;
+  margin-bottom: 1.21353em;
 }
 
-/* line 97, ../../sass/_typography.scss */
+/* line 97, ../../sass/base/_typography.scss */
 .epsilon, h5 {
-  font-size: 21px;
-  font-size: 1.16667rem;
-  margin-bottom: 1.38689rem;
+  font-size: 1.16667em;
+  margin-bottom: 1.38689em;
 }
 
-/* line 97, ../../sass/_typography.scss */
+/* line 97, ../../sass/base/_typography.scss */
 .zeta, h6 {
-  font-size: 18px;
-  font-size: 1rem;
-  margin-bottom: 1.61803rem;
+  font-size: 1em;
+  margin-bottom: 1.61803em;
 }
 
 /* Ampersand
@@ -223,9 +214,255 @@ extend it in SASS.
   unicode-range: U+270C;
 }
 
-/* line 167, ../../sass/_typography.scss */
+/* line 167, ../../sass/base/_typography.scss */
 .ampersand {
   font-family: Ampersand, Verdana, sans-serif;
+}
+
+/* line 1, ../../sass/global/_layout.scss */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 7, ../../sass/global/_layout.scss */
+.row {
+  overflow: hidden;
+  *zoom: 1;
+}
+
+/* line 11, ../../sass/global/_layout.scss */
+.column {
+  float: left;
+  padding: 0.61803em;
+}
+/* line 15, ../../sass/global/_layout.scss */
+.column.last {
+  float: right;
+}
+/* line 19, ../../sass/global/_layout.scss */
+.column.group {
+  padding: 0;
+}
+
+/* line 28, ../../sass/global/_layout.scss */
+.column_1-of-1 {
+  width: 100%;
+}
+@media (max-width: 480px) {
+  /* line 28, ../../sass/global/_layout.scss */
+  .column_1-of-1 {
+    width: 100%;
+  }
+}
+
+/* line 28, ../../sass/global/_layout.scss */
+.column_1-of-2 {
+  width: 50%;
+}
+@media (max-width: 480px) {
+  /* line 28, ../../sass/global/_layout.scss */
+  .column_1-of-2 {
+    width: 100%;
+  }
+}
+
+/* line 28, ../../sass/global/_layout.scss */
+.column_2-of-2 {
+  width: 100%;
+}
+@media (max-width: 480px) {
+  /* line 28, ../../sass/global/_layout.scss */
+  .column_2-of-2 {
+    width: 100%;
+  }
+}
+
+/* line 28, ../../sass/global/_layout.scss */
+.column_1-of-3 {
+  width: 33.33333%;
+}
+@media (max-width: 480px) {
+  /* line 28, ../../sass/global/_layout.scss */
+  .column_1-of-3 {
+    width: 100%;
+  }
+}
+
+/* line 28, ../../sass/global/_layout.scss */
+.column_2-of-3 {
+  width: 66.66667%;
+}
+@media (max-width: 480px) {
+  /* line 28, ../../sass/global/_layout.scss */
+  .column_2-of-3 {
+    width: 100%;
+  }
+}
+
+/* line 28, ../../sass/global/_layout.scss */
+.column_3-of-3 {
+  width: 100%;
+}
+@media (max-width: 480px) {
+  /* line 28, ../../sass/global/_layout.scss */
+  .column_3-of-3 {
+    width: 100%;
+  }
+}
+
+/* line 28, ../../sass/global/_layout.scss */
+.column_1-of-4 {
+  width: 25%;
+}
+@media (max-width: 480px) {
+  /* line 28, ../../sass/global/_layout.scss */
+  .column_1-of-4 {
+    width: 100%;
+  }
+}
+
+/* line 28, ../../sass/global/_layout.scss */
+.column_2-of-4 {
+  width: 50%;
+}
+@media (max-width: 480px) {
+  /* line 28, ../../sass/global/_layout.scss */
+  .column_2-of-4 {
+    width: 100%;
+  }
+}
+
+/* line 28, ../../sass/global/_layout.scss */
+.column_3-of-4 {
+  width: 75%;
+}
+@media (max-width: 480px) {
+  /* line 28, ../../sass/global/_layout.scss */
+  .column_3-of-4 {
+    width: 100%;
+  }
+}
+
+/* line 28, ../../sass/global/_layout.scss */
+.column_4-of-4 {
+  width: 100%;
+}
+@media (max-width: 480px) {
+  /* line 28, ../../sass/global/_layout.scss */
+  .column_4-of-4 {
+    width: 100%;
+  }
+}
+
+/* line 28, ../../sass/global/_layout.scss */
+.column_1-of-5 {
+  width: 20%;
+}
+@media (max-width: 480px) {
+  /* line 28, ../../sass/global/_layout.scss */
+  .column_1-of-5 {
+    width: 100%;
+  }
+}
+
+/* line 28, ../../sass/global/_layout.scss */
+.column_2-of-5 {
+  width: 40%;
+}
+@media (max-width: 480px) {
+  /* line 28, ../../sass/global/_layout.scss */
+  .column_2-of-5 {
+    width: 100%;
+  }
+}
+
+/* line 28, ../../sass/global/_layout.scss */
+.column_3-of-5 {
+  width: 60%;
+}
+@media (max-width: 480px) {
+  /* line 28, ../../sass/global/_layout.scss */
+  .column_3-of-5 {
+    width: 100%;
+  }
+}
+
+/* line 28, ../../sass/global/_layout.scss */
+.column_4-of-5 {
+  width: 80%;
+}
+@media (max-width: 480px) {
+  /* line 28, ../../sass/global/_layout.scss */
+  .column_4-of-5 {
+    width: 100%;
+  }
+}
+
+/* line 28, ../../sass/global/_layout.scss */
+.column_5-of-5 {
+  width: 100%;
+}
+@media (max-width: 480px) {
+  /* line 28, ../../sass/global/_layout.scss */
+  .column_5-of-5 {
+    width: 100%;
+  }
+}
+
+/* line 38, ../../sass/global/_layout.scss */
+.screen {
+  min-height: 100%;
+  min-height: 100vh;
+  padding: 4.23607em 1.61803em 1.61803em;
+}
+/* line 43, ../../sass/global/_layout.scss */
+.screen:nth-child(2n + 1) {
+  background-color: black;
+  color: white;
+  fill: white;
+}
+/* line 48, ../../sass/global/_layout.scss */
+.screen:nth-child(2n + 1) .example {
+  border-color: white;
+}
+
+/* line 54, ../../sass/global/_layout.scss */
+.example {
+  margin-bottom: 1.61803em;
+  border: 1px solid black;
+}
+
+/* line 1, ../../sass/global/_main.scss */
+.main {
+  background: white;
+  min-height: 100%;
+  position: relative;
+  margin-top: 1.61803em;
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+/* line 1, ../../sass/elements/_links.scss */
+a {
+  color: #dd0017;
+  fill: #dd0017;
+  text-decoration: none;
+}
+/* line 7, ../../sass/elements/_links.scss */
+a:hover, a:focus {
+  color: #e33345;
+  fill: #e33345;
+  text-decoration: underline;
+}
+
+/* line 1, ../../sass/elements/_media.scss */
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 /* Page setup
@@ -234,33 +471,13 @@ extend it in SASS.
 Basic styles to set up the page backgrounds, grid systems, etc.
 
 */
-/* line 7, ../../sass/_base.scss */
-* {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-/* line 11, ../../sass/_base.scss */
+/* line 8, ../../sass/elements/_text.scss */
 html {
   font: normal 112.5%/1.61803 "helvetica neue", helvetica, sans-serif;
   word-wrap: break-word;
   background-color: white;
   color: black;
-}
-
-/* line 18, ../../sass/_base.scss */
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-/* line 23, ../../sass/_base.scss */
-.wrapper, body {
-  position: relative;
-  width: 100%;
-  margin: 0 auto;
-  max-width: 740px;
+  fill: black;
 }
 
 /* Basic Elements
@@ -274,33 +491,140 @@ All the basic elements.
     <a href="#">link</a><br />
 
 */
-/* line 43, ../../sass/_base.scss */
+/* line 28, ../../sass/elements/_text.scss */
+article {
+  padding: 0.61803em;
+}
+
+/* line 33, ../../sass/elements/_text.scss */
 b,
 strong {
   font-weight: bold;
 }
 
-/* line 48, ../../sass/_base.scss */
+/* line 38, ../../sass/elements/_text.scss */
 i,
 em {
   font-style: italic;
-  color: #95a5a6;
+  color: #dddddd;
 }
 
-/* line 53, ../../sass/_base.scss */
+/* line 43, ../../sass/elements/_text.scss */
 small {
   font-size: 0.61803em;
 }
 
-/* line 57, ../../sass/_base.scss */
-a {
-  color: #f39c12;
+/* line 47, ../../sass/elements/_text.scss */
+blockquote {
+  display: block;
+  padding: 0.61803em 0.61803em 0.61803em 1.61803em;
+  background-color: #dddddd;
+  font-style: italic;
+  border-left: 0.61803em solid #dd0017;
+}
+
+/* line 60, ../../sass/elements/_text.scss */
+p {
+  max-width: 38em;
+  margin-bottom: 0.80902em;
+}
+
+/* line 65, ../../sass/elements/_text.scss */
+.center {
+  text-align: center;
+}
+
+/* line 1, ../../sass/patterns/_buttons.scss */
+.button,
+button, .button_black, .button_white {
+  border-style: solid;
+  border-width: 0.23607em;
+  cursor: hand;
+  cursor: pointer;
+  display: block;
+  font-size: 1em;
+  font-weight: bold;
+  margin: 0.61803em 0;
+  padding: 0.61803em 1.61803em;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  width: 100%;
+  max-width: 480px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-transition: background-color 0.38197s;
+  -moz-transition: background-color 0.38197s;
+  -o-transition: background-color 0.38197s;
+  transition: background-color 0.38197s;
+}
+/* line 20, ../../sass/patterns/_buttons.scss */
+.button:visited,
+button:visited, .button_black:visited, .button_white:visited {
+  color: white;
+}
+/* line 26, ../../sass/patterns/_buttons.scss */
+.button:hover,
+button:hover, .button_black:hover, .button_white:hover, .button:focus,
+button:focus, .button_black:focus, .button_white:focus, .button:active,
+button:active, .button_black:active, .button_white:active {
+  background: none;
+  color: #dd0017;
+  outline: none;
   text-decoration: none;
 }
-/* line 62, ../../sass/_base.scss */
-a:hover, a:focus {
-  color: #f5b043;
-  text-decoration: underline;
+/* line 34, ../../sass/patterns/_buttons.scss */
+[disabled].button,
+button[disabled], [disabled].button_black, [disabled].button_white, .disabled.button,
+button.disabled, .disabled.button_black, .disabled.button_white {
+  background-color: #dddddd !important;
+  border-color: #dddddd !important;
+  color: black !important;
+  fill: black !important;
+  cursor: not-allowed;
+}
+/* line 44, ../../sass/patterns/_buttons.scss */
+.button_full.button,
+button.button_full, .button_full.button_black, .button_full.button_white {
+  max-width: none;
+}
+
+/* line 50, ../../sass/patterns/_buttons.scss */
+.button,
+button {
+  background-color: #dd0017;
+  border-color: #dd0017;
+  color: white;
+}
+/* line 58, ../../sass/patterns/_buttons.scss */
+.button:hover, .button:focus, .button:active,
+button:hover,
+button:focus,
+button:active {
+  color: #dd0017;
+}
+
+/* line 63, ../../sass/patterns/_buttons.scss */
+.button_black {
+  background-color: black;
+  border-color: black;
+  color: white;
+}
+/* line 71, ../../sass/patterns/_buttons.scss */
+.button_black:hover, .button_black:focus, .button_black:active {
+  color: black;
+}
+
+/* line 76, ../../sass/patterns/_buttons.scss */
+.button_white {
+  background-color: white;
+  border-color: white;
+  color: black;
+}
+/* line 84, ../../sass/patterns/_buttons.scss */
+.button_white:hover, .button_white:focus, .button_white:active {
+  color: white;
 }
 
 /* Shame
@@ -309,7 +633,32 @@ a:hover, a:focus {
 Hacky, shameful CSS that needs fixing. Based on an idea from [@csswizardry](http://csswizardry.com)
 
 */
-/* line 7, ../../sass/_shame.scss */
-body {
-  padding: 0.61803em;
+/* line 8, ../../sass/_shame.scss */
+.column_fill {
+  display: block;
+  background-color: #dd0017;
+}
+
+/* line 15, ../../sass/_shame.scss */
+#grid .example .column {
+  background-color: rgba(221, 0, 23, 0.38197);
+}
+
+/* line 21, ../../sass/_shame.scss */
+.navigation {
+  position: fixed;
+  padding: 0.61803em 1.61803em;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  background-color: white;
+}
+/* line 30, ../../sass/_shame.scss */
+.navigation h1 {
+  margin-bottom: 0;
+}
+/* line 34, ../../sass/_shame.scss */
+.navigation.scrolling {
+  font-size: 0.61803em;
 }

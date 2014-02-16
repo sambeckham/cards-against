@@ -1,0 +1,87 @@
+%button{
+    border-style: solid;
+    border-width: pow($ratio-inv, 3)#{em};
+    cursor: hand;
+    cursor: pointer;
+    display: block;
+    font-size: 1em;
+    font-weight: bold;
+    margin: $ratio-inv#{em} 0;
+    padding: $ratio-inv#{em} $ratio#{em};
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: 100%;
+    max-width: $s;
+
+    @include appearance(none);
+    @include transition(background-color 1 - $ratio-inv#{s});
+
+    &:visited{
+        color: $color_white;
+    }
+
+    &:hover,
+    &:focus,
+    &:active{
+        background: none;
+        color: $color_alt;
+        outline: none;
+        text-decoration: none;
+    }
+
+    &[disabled],
+    &.disabled{
+        // The !important rulings are there to make sure it appears disabled regardless of any custom styling
+        background-color: $color_grey !important;
+        border-color: $color_grey !important;
+        color: $color_black !important;
+        fill: $color_black !important;
+        cursor: not-allowed;
+
+    }
+
+    &.button_full{
+        max-width: none;
+    }
+}
+
+.button,
+button{
+    @extend %button;
+    background-color: $color_alt;
+    border-color: $color_alt;
+    color: $color_white;
+
+    &:hover,
+    &:focus,
+    &:active{
+        color: $color_alt;
+    }
+}
+
+.button_black{
+    @extend %button;
+    background-color: $color_black;
+    border-color: $color_black;
+    color: $color_white;
+
+    &:hover,
+    &:focus,
+    &:active{
+        color: $color_black;
+    }
+}
+
+.button_white{
+    @extend %button;
+    background-color: $color_white;
+    border-color: $color_white;
+    color: $color_black;
+
+    &:hover,
+    &:focus,
+    &:active{
+        color: $color_white;
+    }
+}

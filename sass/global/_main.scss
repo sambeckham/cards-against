@@ -1,0 +1,12 @@
+.main{
+    background: $color_white;
+    min-height: 100%;
+    position: relative;
+    margin-top: $ratio#{em};
+
+    @include transition(all .4s);
+
+    // .secondary-sidebar_open &{
+    //     @include transform(translateX($sidebar-width * $ratio));
+    // }
+}

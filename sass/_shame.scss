@@ -4,7 +4,34 @@
 Hacky, shameful CSS that needs fixing. Based on an idea from [@csswizardry](http://csswizardry.com)
 
 */
-body{
-    @extend .wrapper;
-    padding: $ratio-inv + em;
+
+.column_fill{
+	display: block;
+	background-color: $color_alt;
+}
+
+#grid{
+	.example{
+		.column{
+			background-color: $color_alt_trans;
+		}
+	}
+}
+
+.navigation{
+	position: fixed;
+	padding: $ratio-inv#{em} $ratio#{em};
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 99;
+	background-color: $color_white;
+	
+	h1{
+		margin-bottom: 0;
+	}
+
+	&.scrolling{
+		font-size: $ratio-inv#{em};
+	}
 }

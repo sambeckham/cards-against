@@ -23,7 +23,7 @@ $delta: 24 !default; // 24 = 18 × 1.3333
 $epsilon: 21 !default; // 21 = 18 × 1.1667
 $zeta: 18 !default; // 18 = 18 × 1
 
-$type-scale-unit-value: rem !default;
+$type-scale-unit-value: em !default;
 
 /* Mixins
 ==========
@@ -164,10 +164,6 @@ $amp-font-family: Verdana, sans-serif !default;
     font-family: $amp-font-family;
 }
 
-%ampersand {
-    @include ampersand($amp-fontface-name, $amp-font-family);
-}
-
 .ampersand {
-    @extend %ampersand;
+    @include ampersand($amp-fontface-name, $amp-font-family);
 }

@@ -1,0 +1,12 @@
+a{
+    color: $color_alt;
+    fill: $color_alt;
+    text-decoration: none;
+
+    &:hover,
+    &:focus{
+        color: $color_alt_light;
+        fill: $color_alt_light;
+        text-decoration: underline;
+    }
+}
